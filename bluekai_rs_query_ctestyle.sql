@@ -20,7 +20,7 @@ WHERE
 	AND bk_campaign_id IS NOT NULL --we don't want to pull in data for campaigns that are null (truly just a cleaning step)
 	AND bk_campaign_id IN 
 		(SELECT campaign_id 
-		FROM `nyt-bigquery-beta-workspace.palmer_data.whitelisted_readerscope`) --this is the whitelisted campaign list for readerscope, since some campaigns also exist for
+		FROM `nyt-bigquery-beta-workspace.storm_data.whitelist_readerscope`) --this is the whitelisted campaign list for readerscope, since some campaigns also exist for
 																				--marketing purposes. We want to continuously update this, as needed, which should be dictated
 																				--by Nicholas Eckhart and/or the data product manager on his team. We can consider making this a
 																				--Google Sheet that auto updates a table in BQ if we would like to make this process easier
