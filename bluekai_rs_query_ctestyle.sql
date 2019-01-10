@@ -1,4 +1,10 @@
 ----------------
+--in-depth documentation on the 30-day window, mentioned in the uc_base_stitch CTE in the first line of the where clause
+--can be found here: https://docs.google.com/document/d/1vyE43aY29u0RBC7AhT58JMqSrw89DR29iIDqV6U9Zbo/edit?usp=sharing
+----------------
+
+
+----------------
 --it might be confusing, as this table looks like it could just be executed via the 'uc' table, however, this enables us to 
 --deal with situations where a campaign is turned on and backfilled midway through a month (see the UNION ALL portion of query)
 --for ensuring a complete dataset of cookies for a month
