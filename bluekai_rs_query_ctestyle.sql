@@ -22,9 +22,10 @@ WHERE
 		(SELECT campaign_id 
 		FROM `nyt-bigquery-beta-workspace.storm_data.whitelist_readerscope`) --this is the whitelisted campaign list for readerscope, since some campaigns also exist for
 																				--marketing purposes. We want to continuously update this, as needed, which should be dictated
-																				--by Nicholas Eckhart and/or the data product manager on his team. We can consider making this a
-																				--Google Sheet that auto updates a table in BQ if we would like to make this process easier
-																				--(i.e. everytime Nick makes an update in his Google Sheet, it auto populates BQ)
+																				--by Nicholas Eckhart and/or the data product manager on his team. 
+																				--this whitelist automatically updates as it is linked directly to the google sheet that
+																				--Nick updates, located here: 
+																				--https://docs.google.com/spreadsheets/d/1RMdkENp3lHmfVh8BcA-MEQ1SGB-VZePiCspyPiHTViw/edit#gid=1008069801
 	AND bk_campaign_id IN --ensures that we aren't bringing anything in anything that doesn't have a campaign name
 		(SELECT campaign_id 
 		FROM `nyt-adtech-prd.bluekai_data.campaign_metadata`) 
